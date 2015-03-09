@@ -14,7 +14,7 @@ class Torrent(object):
 
     @location.setter
     def location(self, value):
-        return self.file_location
+        self.file_location = value
 
     @property
     def name(self):

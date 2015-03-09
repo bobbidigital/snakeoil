@@ -1,3 +1,4 @@
+mock==1.0.1
 nose==1.3.4
 requests==2.5.3
--e git+https://github.com/bobbidigital/snakeoil.git@58d941054813b322eea5ff0ea91ea434434c5abb#egg=SnakeOil-master
+-e git+https://github.com/bobbidigital/snakeoil.git@6eb5573765d30f2042e887726e409a2d0e32a4c2#egg=SnakeOil-master

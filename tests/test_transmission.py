@@ -1,6 +1,9 @@
 import unittest
+import requests
 from snakeoil import TransmissionDaemon
 from snakeoil import Torrent
+import mock
+
 
 class  TestTransmission(unittest.TestCase):
 
@@ -15,11 +18,12 @@ class  TestTransmission(unittest.TestCase):
         self.assertEqual(daemon.host, self.host)
         self.assertEqual(daemon.port, self.port)
 
-    def test_add_torrent(self):
+    @mock.patch.object(requests, 'post', autospec=True) 
+    def test_add_torrent(self, mock_object):
         daemon = TransmissionDaemon(host=self.host)
         torrent = Torrent(self.torrent)
         response = daemon.add_torrent(torrent)
-        self.assertEqual(response['result'], self.SUCCESS)
+        assert mock_object.called
 
 
 
